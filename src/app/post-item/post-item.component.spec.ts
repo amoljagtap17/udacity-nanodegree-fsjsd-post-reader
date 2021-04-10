@@ -8,9 +8,8 @@ describe('PostItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PostItemComponent ]
-    })
-    .compileComponents();
+      declarations: [PostItemComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +20,21 @@ describe('PostItemComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should upvote correctly', () => {
+    expect(
+      component.upvote({
+        id: 10,
+        title: 'Sample Post',
+        body: 'Sample body',
+        votes: 1,
+      })
+    ).toEqual({
+      id: 10,
+      title: 'Sample Post',
+      body: 'Sample body',
+      votes: 2,
+    });
   });
 });

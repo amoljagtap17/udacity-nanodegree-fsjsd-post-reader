@@ -21,12 +21,17 @@ export class PostItemComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  upvote(post: Post): void {
+  upvote(post: Post): Post {
     post.votes += 1;
+
+    return post;
   }
 
-  downvote(post: Post): void {
+  downvote(post: Post): Post {
     post.votes -= 1;
+
+    // for test return post
+    return post;
   }
 
   hide(post: Post): void {
