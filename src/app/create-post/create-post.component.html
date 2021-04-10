@@ -8,6 +8,7 @@
     maxlength="32"
     placeholder="Enter post title"
     [(ngModel)]="title"
+    #blogTitle="ngModel"
   />
   <br />
   <textarea
@@ -26,3 +27,13 @@
     [disabled]="form.invalid"
   />
 </form>
+
+<!-- <div *ngIf="blogTitle.invalid && blogTitle.dirty">
+  <div *ngIf="blogTitle.errors.required">
+    Please provide a title for your blog post.
+  </div>
+  <div *ngIf="blogTitle.errors.minlength">
+    The title of the blog must contain at least 8 characters.
+  </div>
+</div>
+ -->
